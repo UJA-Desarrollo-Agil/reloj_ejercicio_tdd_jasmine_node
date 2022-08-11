@@ -348,3 +348,7 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+package-lock.json
+.gitignore
+spec/support/jasmine.json
+package.json

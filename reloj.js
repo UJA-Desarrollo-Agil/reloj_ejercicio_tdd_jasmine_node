@@ -2,8 +2,8 @@
  * Ejercicio de TDD.
  * Pequeño ejercicio de TDD para Jasmine con Node
  * Creamos un par de funciones que permiten:
- * a) comprobar si un valor corresponde con una moneda válida en euros
- * b) Comprobar si con un conjunto de dichos valores alcanza para pagar una determinada cantidad.
+ * a) Comprobar si un par de valores corresponden con un binomino horas:minutos válidos
+ * b) Devolver una nueva hora a partir de una inicial a la que se le suman un número positivo de minutos.
  * 
  * @author Victor Rivas <vrivas@ujaen.es>
  * @date 06-may-2022
@@ -11,17 +11,12 @@
 
 /*
 PROCESO DE INSTALACIÓN DE JASMINE
-Fuente: https://jasmine.github.io/pages/getting_started.html
-
-a) npm install --save-dev jasmine
-b) npx jasmine init
-c) , "scripts": { "test": "jasmine" } // Añadir a package.json
-d)  "spec_dir": "./spec" // Modificar en spec\support\jasmine.json
+ Mirar instrucciones en fichero README.md
  
 
- Para ejecutar: 
+EJECUCIÓN DE LAS PRUEBAS
  npm test
-
+ 
  O bien directamente desde package.json o desde el menú de ejecución y depuración.
 
  */
