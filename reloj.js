@@ -27,8 +27,9 @@ d)  "spec_dir": "./spec" // Modificar en spec\support\jasmine.json
  */
 
 // Creación de un módulo (una especie de espacio de nombres o clase) para poder ser probado
-var reloj = module.exports = {};
+const reloj = module.exports = {};
 
+reloj.HORA_INVALIDA={hora: null, minutos: null }
 /**
  * @description Esta función comprueba si un par de valores pasados como números enteros corresponden o no a una hora válida
  * @param {integer} hora Valor para la hora
@@ -44,10 +45,15 @@ reloj.esHoraValida = function (hora, minutos) {
  * @param {integer} hora_inicial Hora de inicio
  * @param {integer} minutos_inicial Minutos de inicio
  * @param {integer} minutos_adicionales Minutos que se suman a la hora
- * @returns Un objeto compuesto por dos valores {hora_final, minutos_final} correspondientes a la hora que surge al incrementar la hora inicial con los minutos adicionales
+ * @returns Un objeto compuesto por dos valores {hora: HH, minutos: MM} correspondientes a la hora que surge al incrementar la hora inicial con los minutos adicionales
  */
 reloj.incrementaHoraEnMinutos = function (hora_inicial, minutos_inicial, minutos_adicionales ) {
        // Escribir el código necesario para que vayan pasando las pruebas una a una.
+
+       // Ejemplos de return:
+       // return {hora:10, minutos: 30}
+       // return this.HORA_INVALIDA
+
 }
 
 /*
