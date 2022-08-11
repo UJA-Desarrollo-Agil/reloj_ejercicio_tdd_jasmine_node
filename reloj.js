@@ -38,6 +38,7 @@ reloj.HORA_INVALIDA={hora: null, minutos: null }
  */
 reloj.esHoraValida = function (hora, minutos) {
     // Escribir el código necesario para que vayan pasando las pruebas una a una.
+    return (0<=hora && hora<=23) && (0<=minutos && minutos<=59)
 }
 
 /**
@@ -48,8 +49,7 @@ reloj.esHoraValida = function (hora, minutos) {
  * @returns Un objeto compuesto por dos valores {hora: HH, minutos: MM} correspondientes a la hora que surge al incrementar la hora inicial con los minutos adicionales
  */
 reloj.incrementaHoraEnMinutos = function (hora_inicial, minutos_inicial, minutos_adicionales ) {
-       // Escribir el código necesario para que vayan pasando las pruebas una a una.
-
+       // Escribir el código necesario para que vayan pasando los apartados "describe" de reloj-spec.js uno a uno.
        // Ejemplos de return:
        // return {hora:10, minutos: 30}
        // return this.HORA_INVALIDA
