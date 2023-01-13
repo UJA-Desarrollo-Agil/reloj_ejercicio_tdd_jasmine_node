@@ -24,7 +24,7 @@ EJECUCIÓN DE LAS PRUEBAS
 // Creación de un módulo (una especie de espacio de nombres o clase) para poder ser probado
 const reloj = module.exports = {};
 
-reloj.HORA_INVALIDA={hora: null, minutos: null }
+reloj.HORA_INVALIDA = { hora: null, minutos: null }
 /**
  * @description Esta función comprueba si un par de valores pasados como números enteros corresponden o no a una hora válida
  * @param {integer} hora Valor para la hora
@@ -33,10 +33,10 @@ reloj.HORA_INVALIDA={hora: null, minutos: null }
  */
 reloj.esHoraValida = function (hora, minutos) {
     // Escribir el código necesario para que vayan pasando las pruebas una a una.
-    if( typeof hora=="undefined" || typeof minutos=="undefined" ) return false;
-    if( hora==null || minutos==null ) return false;
-    if( hora<0 || minutos <0 ) return false;
-    if ( hora>23 || minutos>59) return false;
+    if (typeof hora == "undefined" || typeof minutos == "undefined") return false;
+    if (hora == null || minutos == null) return false;
+    if (hora < 0 || minutos < 0) return false;
+    if (hora > 23 || minutos > 59) return false;
     return true;
 }
 
@@ -47,15 +47,17 @@ reloj.esHoraValida = function (hora, minutos) {
  * @param {integer} minutos_adicionales Minutos que se suman a la hora
  * @returns Un objeto compuesto por dos valores {hora: HH, minutos: MM} correspondientes a la hora que surge al incrementar la hora inicial con los minutos adicionales
  */
-reloj.incrementaHoraEnMinutos = function (hora_inicial, minutos_inicial, minutos_adicionales ) {
-       // Escribir el código necesario para que vayan pasando los apartados "describe" de reloj-spec.js uno a uno.
-       // Ejemplos de return:
-       // return {hora:10, minutos: 30}
-       // return this.HORA_INVALIDA
-       if( !this.esHoraValida(hora_inicial, minutos_inicial)) return reloj.HORA_INVALIDA;
-       if( typeof minutos_adicionales=="undefined" || minutos_adicionales==null ) return reloj.HORA_INVALIDA;
-       if( minutos_adicionales<0) return reloj.HORA_INVALIDA;
-
+reloj.incrementaHoraEnMinutos = function (hora_inicial, minutos_inicial, minutos_adicionales) {
+    // Escribir el código necesario para que vayan pasando los apartados "describe" de reloj-spec.js uno a uno.
+    // Ejemplos de return:
+    // return {hora:10, minutos: 30}
+    // return this.HORA_INVALIDA
+    if (!this.esHoraValida(hora_inicial, minutos_inicial)) return reloj.HORA_INVALIDA;
+    if (typeof minutos_adicionales == "undefined" || minutos_adicionales == null) return reloj.HORA_INVALIDA;
+    if (minutos_adicionales < 0) return reloj.HORA_INVALIDA;
+    let toRet={hora: (hora_inicial+Math.floor((minutos_inicial+minutos_adicionales)/60))%24, 
+                minutos: (minutos_inicial+minutos_adicionales)%60};
+    return toRet;
 }
 
 /*
@@ -67,11 +69,11 @@ reloj.incrementaHoraEnMinutos = function (hora_inicial, minutos_inicial, minutos
 console.log("Aplicación reloj")
 console.log("==================")
 
-let hora_inicial=10;
-let minuto_inicial=20;
+let hora_inicial = 10;
+let minuto_inicial = 20;
 let minutos_adicionales = 450;
-let resultado = reloj.incrementaHoraEnMinutos( hora_inicial, minuto_inicial, minutos_adicionales )
+let resultado = reloj.incrementaHoraEnMinutos(hora_inicial, minuto_inicial, minutos_adicionales)
 console.log("Si intento añadir ", minutos_adicionales, " a la hora "
-    , hora_inicial+":"+minuto_inicial
-    , ", el resultado es", resultado )
+    , hora_inicial + ":" + minuto_inicial
+    , ", el resultado es", resultado)
 

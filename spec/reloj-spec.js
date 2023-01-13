@@ -90,46 +90,60 @@ describe("Incrementos válidos devuelven horas correctas", function () {
     it("Valor 0 en los minutos adicionales devuelven la misma hora inicial",
         function () {
             // Escribe el expect necesario
+            expect(reloj.incrementaHoraEnMinutos(10, 20, 0)).toEqual({hora:10, minutos:20});
         }
     );
     it("Múltiplos de 1440 devuelven la misma hora inicial",
         function () {
             // Escribe 2 expects que lo comprueben
+            expect(reloj.incrementaHoraEnMinutos(10, 20, 1440)).toEqual({hora:10, minutos:20});
+            expect(reloj.incrementaHoraEnMinutos(10, 20, 1440*3)).toEqual({hora:10, minutos:20});
         }
     );
     it("Incrementos que solo cambian los minutos sin pasar de 59 minutos (es decir, sin cambiar las horas) devuelven valores correctos",
         function () {
             // Escribe 2 expects que lo comprueben
+            expect(reloj.incrementaHoraEnMinutos(10, 20, 30)).toEqual({hora:10, minutos:50});
+            expect(reloj.incrementaHoraEnMinutos(15, 54, 5)).toEqual({hora:15, minutos:59});
         }
     );
     it("Incrementos que cambian las horas pero no los minutos y sin pasar de las 23 horas devuelven valores correctos",
         function () {
             // Escribe 2 expects que lo comprueben
+            expect(reloj.incrementaHoraEnMinutos(10, 20, 60)).toEqual({hora:11, minutos:20});
+            expect(reloj.incrementaHoraEnMinutos(13, 59, 180)).toEqual({hora:16, minutos:59});
         }
     );
 
     it("Incrementos que cambian las horas y los minutos pero sin pasar de las 23:59 devuelven valores correctos",
         function () {
             // Escribe 2 expects que lo comprueben
+            expect(reloj.incrementaHoraEnMinutos(10, 20, 75)).toEqual({hora:11, minutos:35});
+            expect(reloj.incrementaHoraEnMinutos(1, 54, 12)).toEqual({hora:2, minutos:6});
         }
     );
-
 
     it("Incrementos que cambian los minutos pasando de las 59 minutos, pero sin pasar de las 23 horas devuelven valores correctos",
         function () {
             // Escribe 2 expects que lo comprueben
+            expect(reloj.incrementaHoraEnMinutos(1, 54, 12)).toEqual({hora:2, minutos:6});
+            expect(reloj.incrementaHoraEnMinutos(14, 35, 50)).toEqual({hora:15, minutos:25});
         }
     );
 
     it("Incrementos que cambian las horas pasando de las 23 horas, pero sin cambiar los minutos devuelven valores correctos",
         function () {
             // Escribe 2 expects que lo comprueben
+            expect(reloj.incrementaHoraEnMinutos(23, 54, 60)).toEqual({hora:0, minutos:54});
+            expect(reloj.incrementaHoraEnMinutos(23, 50, 60*2)).toEqual({hora:1, minutos:50});
         }
     );
 
     it("Incrementos que cambian tanto las horas como los minutos pasando de las 23:59 devuelven valores correctos",
         function () {
             // Escribe 2 expects que lo comprueben
+            expect(reloj.incrementaHoraEnMinutos(23, 50, 15)).toEqual({hora:0, minutos:5});
+            expect(reloj.incrementaHoraEnMinutos(20, 30, 12*60+8)).toEqual({hora:8, minutos:38});
         }
     );
 });
