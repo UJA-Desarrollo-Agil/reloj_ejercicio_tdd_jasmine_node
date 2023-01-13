@@ -25,31 +25,31 @@ describe("Comprobación de horas correctas", function () {
         function () {
             expect(reloj.esHoraValida()).toBeFalse()
             expect(reloj.esHoraValida(1)).toBeFalse()
-            expect(reloj.esHoraValida(null,2)).toBeFalse()
-            expect(reloj.esHoraValida(-3,4)).toBeFalse()
-            expect(reloj.esHoraValida(5,-6)).toBeFalse()
+            expect(reloj.esHoraValida(null, 2)).toBeFalse()
+            expect(reloj.esHoraValida(-3, 4)).toBeFalse()
+            expect(reloj.esHoraValida(5, -6)).toBeFalse()
         });
     it("Valores de horas que no estén entre 0 y 23 deben dar false",
         function () {
-            expect(reloj.esHoraValida(24,10)).toBeFalse()
-            expect(reloj.esHoraValida(28,10)).toBeFalse()
-    });
+            expect(reloj.esHoraValida(24, 10)).toBeFalse()
+            expect(reloj.esHoraValida(28, 10)).toBeFalse()
+        });
     it("Valores de minutos que no estén entre 0 y 59 deben dar false",
         function () {
-            expect(reloj.esHoraValida(10,60)).toBeFalse()
-            expect(reloj.esHoraValida(10,70)).toBeFalse()
-    });
+            expect(reloj.esHoraValida(10, 60)).toBeFalse()
+            expect(reloj.esHoraValida(10, 70)).toBeFalse()
+        });
     it("Valores correctos de hora y minutos deben dar true",
         function () {
-            expect(reloj.esHoraValida(0,0)).toBeTrue()
-            expect(reloj.esHoraValida(10,0)).toBeTrue()
-            expect(reloj.esHoraValida(23,0)).toBeTrue()
-            expect(reloj.esHoraValida(0,30)).toBeTrue()
-            expect(reloj.esHoraValida(10,30)).toBeTrue()
-            expect(reloj.esHoraValida(23,30)).toBeTrue()
-            expect(reloj.esHoraValida(0,59)).toBeTrue()
-            expect(reloj.esHoraValida(10,59)).toBeTrue()
-            expect(reloj.esHoraValida(23,59)).toBeTrue()            
+            expect(reloj.esHoraValida(0, 0)).toBeTrue()
+            expect(reloj.esHoraValida(10, 0)).toBeTrue()
+            expect(reloj.esHoraValida(23, 0)).toBeTrue()
+            expect(reloj.esHoraValida(0, 30)).toBeTrue()
+            expect(reloj.esHoraValida(10, 30)).toBeTrue()
+            expect(reloj.esHoraValida(23, 30)).toBeTrue()
+            expect(reloj.esHoraValida(0, 59)).toBeTrue()
+            expect(reloj.esHoraValida(10, 59)).toBeTrue()
+            expect(reloj.esHoraValida(23, 59)).toBeTrue()
         });
 });
 
@@ -70,15 +70,18 @@ Por tanto:
 describe("Valores no válidos devuelven el binomio null:null, es decir, reloj.HORA_INVALIDA", function () {
     it("Valores nulos en hora de inicio, minutos de inicio o minutos adicionales devuelven reloj.HORA_INVALIDA",
         function () {
-            // Escribe el expect necesario
+            // Escribe los expects necesarios
             expect(reloj.incrementaHoraEnMinutos()).toEqual(reloj.HORA_INVALIDA);
             expect(reloj.incrementaHoraEnMinutos(10)).toEqual(reloj.HORA_INVALIDA);
-            expect(reloj.incrementaHoraEnMinutos(10,20)).toEqual(reloj.HORA_INVALIDA);
+            expect(reloj.incrementaHoraEnMinutos(10, 20)).toEqual(reloj.HORA_INVALIDA);
         }
     );
     it("Valores negativos en hora de inicio, minutos de inicio o minutos adicionales devuelven reloj.HORA_INVALIDA",
-      function () {
-        // Escribe el expect necesario
+        function () {
+            // Escribe los expects necesarios
+            expect(reloj.incrementaHoraEnMinutos(-10, 5, 5)).toEqual(reloj.HORA_INVALIDA);
+            expect(reloj.incrementaHoraEnMinutos(10, -5, 5)).toEqual(reloj.HORA_INVALIDA);
+            expect(reloj.incrementaHoraEnMinutos(10, 5, -5)).toEqual(reloj.HORA_INVALIDA);
         }
     );
 });
@@ -90,31 +93,31 @@ describe("Incrementos válidos devuelven horas correctas", function () {
         }
     );
     it("Múltiplos de 1440 devuelven la misma hora inicial",
-      function () {
+        function () {
             // Escribe 2 expects que lo comprueben
         }
     );
     it("Incrementos que solo cambian los minutos sin pasar de 59 minutos (es decir, sin cambiar las horas) devuelven valores correctos",
-      function () {
+        function () {
             // Escribe 2 expects que lo comprueben
         }
     );
     it("Incrementos que cambian las horas pero no los minutos y sin pasar de las 23 horas devuelven valores correctos",
-      function () {
+        function () {
             // Escribe 2 expects que lo comprueben
         }
     );
 
     it("Incrementos que cambian las horas y los minutos pero sin pasar de las 23:59 devuelven valores correctos",
-      function () {
+        function () {
             // Escribe 2 expects que lo comprueben
         }
     );
 
-    
+
     it("Incrementos que cambian los minutos pasando de las 59 minutos, pero sin pasar de las 23 horas devuelven valores correctos",
-      function () {
-          // Escribe 2 expects que lo comprueben
+        function () {
+            // Escribe 2 expects que lo comprueben
         }
     );
 

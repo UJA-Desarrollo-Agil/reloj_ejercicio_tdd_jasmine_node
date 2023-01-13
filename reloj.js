@@ -54,6 +54,7 @@ reloj.incrementaHoraEnMinutos = function (hora_inicial, minutos_inicial, minutos
        // return this.HORA_INVALIDA
        if( !this.esHoraValida(hora_inicial, minutos_inicial)) return reloj.HORA_INVALIDA;
        if( typeof minutos_adicionales=="undefined" || minutos_adicionales==null ) return reloj.HORA_INVALIDA;
+       if( minutos_adicionales<0) return reloj.HORA_INVALIDA;
 
 }
 
