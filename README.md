@@ -100,7 +100,7 @@ Started
 .........
 
 
-9 specs, 0 failures
+14 specs, 0 failures
 Finished in 0.01 seconds
 Randomized with seed 29681 (jasmine --random=true --seed=29681)
 ```
