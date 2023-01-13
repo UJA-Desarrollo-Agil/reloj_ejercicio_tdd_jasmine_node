@@ -36,6 +36,7 @@ reloj.esHoraValida = function (hora, minutos) {
     if( typeof hora=="undefined" || typeof minutos=="undefined" ) return false;
     if( hora==null || minutos==null ) return false;
     if( hora<0 || minutos <0 ) return false;
+    if ( hora>23 || minutos>59) return false;
 }
 
 /**

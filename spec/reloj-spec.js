@@ -31,13 +31,13 @@ describe("Comprobación de horas correctas", function () {
         });
     it("Valores de horas que no estén entre 0 y 23 deben dar false",
         function () {
-            //expect(reloj.esHoraValida(24,10)).toBeFalse()
-            //expect(reloj.esHoraValida(28,10)).toBeFalse()
+            expect(reloj.esHoraValida(24,10)).toBeFalse()
+            expect(reloj.esHoraValida(28,10)).toBeFalse()
     });
     it("Valores de minutos que no estén entre 0 y 59 deben dar false",
         function () {
-            //expect(reloj.esHoraValida(10,60)).toBeFalse()
-            //expect(reloj.esHoraValida(10,70)).toBeFalse()
+            expect(reloj.esHoraValida(10,60)).toBeFalse()
+            expect(reloj.esHoraValida(10,70)).toBeFalse()
     });
     it("Valores correctos de hora y minutos deben dar true",
         function () {
