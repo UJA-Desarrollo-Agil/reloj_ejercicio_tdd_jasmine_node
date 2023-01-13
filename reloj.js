@@ -33,6 +33,9 @@ reloj.HORA_INVALIDA={hora: null, minutos: null }
  */
 reloj.esHoraValida = function (hora, minutos) {
     // Escribir el código necesario para que vayan pasando las pruebas una a una.
+    if( typeof hora=="undefined" || typeof minutos=="undefined" ) return false;
+    if( hora==null || minutos==null ) return false;
+    if( hora<0 || minutos <0 ) return false;
 }
 
 /**

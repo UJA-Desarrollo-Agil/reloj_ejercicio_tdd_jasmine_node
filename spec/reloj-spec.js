@@ -23,11 +23,11 @@ A continuación:
 describe("Comprobación de horas correctas", function () {
     it("Valores negativos y null no deben ser legales",
         function () {
-            //expect(reloj.esHoraValida()).toBeFalse()
-            //expect(reloj.esHoraValida(1)).toBeFalse()
-            //expect(reloj.esHoraValida(null,2)).toBeFalse()
-            //expect(reloj.esHoraValida(-3,4)).toBeFalse()
-            //expect(reloj.esHoraValida(5,-6)).toBeFalse()
+            expect(reloj.esHoraValida()).toBeFalse()
+            expect(reloj.esHoraValida(1)).toBeFalse()
+            expect(reloj.esHoraValida(null,2)).toBeFalse()
+            expect(reloj.esHoraValida(-3,4)).toBeFalse()
+            expect(reloj.esHoraValida(5,-6)).toBeFalse()
         });
     it("Valores de horas que no estén entre 0 y 23 deben dar false",
         function () {
