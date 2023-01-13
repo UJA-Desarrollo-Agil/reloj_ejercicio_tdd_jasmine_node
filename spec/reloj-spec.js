@@ -64,13 +64,16 @@ Recuerda que dicha función necesita tres parámetros: una hora inicial, un minu
 Y recuerda que la función devuelve un objeto compuesto por dos campos: hora y minutos.
 Por tanto:
  - Escribe un expect (o más, según se indica) por cada uno de los comentarios que he dejado, y vuelve a ejecutar el ciclo RED > GREEN > REFACTOR 
- - Puedes codificar para probar los "describe" completos, es decir, sin necesidad de programar expect trasn expect.
+ - Puedes codificar para probar los "describe" completos, es decir, sin necesidad de programar expect tras expect.
  */
 // 
 describe("Valores no válidos devuelven el binomio null:null, es decir, reloj.HORA_INVALIDA", function () {
     it("Valores nulos en hora de inicio, minutos de inicio o minutos adicionales devuelven reloj.HORA_INVALIDA",
         function () {
             // Escribe el expect necesario
+            expect(reloj.incrementaHoraEnMinutos()).toEqual(reloj.HORA_INVALIDA);
+            expect(reloj.incrementaHoraEnMinutos(10)).toEqual(reloj.HORA_INVALIDA);
+            expect(reloj.incrementaHoraEnMinutos(10,20)).toEqual(reloj.HORA_INVALIDA);
         }
     );
     it("Valores negativos en hora de inicio, minutos de inicio o minutos adicionales devuelven reloj.HORA_INVALIDA",
