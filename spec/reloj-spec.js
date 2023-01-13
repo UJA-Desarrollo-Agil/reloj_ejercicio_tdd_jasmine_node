@@ -41,15 +41,15 @@ describe("Comprobación de horas correctas", function () {
     });
     it("Valores correctos de hora y minutos deben dar true",
         function () {
-            //expect(reloj.esHoraValida(0,0)).toBeTrue()
-            //expect(reloj.esHoraValida(10,0)).toBeTrue()
-            //expect(reloj.esHoraValida(23,0)).toBeTrue()
-            //expect(reloj.esHoraValida(0,30)).toBeTrue()
-            //expect(reloj.esHoraValida(10,30)).toBeTrue()
-            //expect(reloj.esHoraValida(23,30)).toBeTrue()
-            //expect(reloj.esHoraValida(0,59)).toBeTrue()
-            //expect(reloj.esHoraValida(10,59)).toBeTrue()
-            //expect(reloj.esHoraValida(23,59)).toBeTrue()            
+            expect(reloj.esHoraValida(0,0)).toBeTrue()
+            expect(reloj.esHoraValida(10,0)).toBeTrue()
+            expect(reloj.esHoraValida(23,0)).toBeTrue()
+            expect(reloj.esHoraValida(0,30)).toBeTrue()
+            expect(reloj.esHoraValida(10,30)).toBeTrue()
+            expect(reloj.esHoraValida(23,30)).toBeTrue()
+            expect(reloj.esHoraValida(0,59)).toBeTrue()
+            expect(reloj.esHoraValida(10,59)).toBeTrue()
+            expect(reloj.esHoraValida(23,59)).toBeTrue()            
         });
 });
 
