@@ -10,26 +10,28 @@ Necesitarás tener instalado Node.js para poder ejecutarlo. Por tanto, [descárg
 
 A continuación usando la línea de órdenes, haz lo siguiente:
 
-1. Clona este repositorio y entra dentro del directorio que ha creado (*reloj_ejercicio_tdd_jasmine_node*).
+1. Clona este repositorio o descomprime la última release disponible: https://github.com/UJA-Desarrollo-Agil/reloj_ejercicio_tdd_jasmine_node/releases/latest
+
+2. Entra dentro del directorio que se ha creado (*reloj_ejercicio_tdd_jasmine_node*).
    
-2. Ejecuta:
+3. Ejecuta:
 
     ```npm init```
 
     **ATENCIÓN:** Rellena todas las preguntas que te hace con los datos que estimes oportunos; **pero para la pregunta ```test command:``` debes escribir ```jasmine```**.
 
-3. Ejecuta: 
+4. Ejecuta: 
 
     ```npm install --save-dev jasmine```
 
-4. Ejecuta:
+5. Ejecuta:
 
     ```npx jasmine init```
 
-5. Abre Visual Code Studio (o el IDE que estés utilizando) y abre dentro de él este directorio de trabajo con el proyecto.
+6. Abre Visual Code Studio (o el IDE que estés utilizando) y abre dentro de él este directorio de trabajo con el proyecto.
 
-6. Mueve el fichero *reloj-spec.js.template* en el directorio *spec* y renómbralo para que se llame, finalmente: *reloj-spec.js*
-7. Comienza a trabajar con los ejercicios que se indican en *reloj-spec.js*
+7. Mueve el fichero *reloj-spec.js.template* en el directorio *spec* y renómbralo para que se llame, finalmente: *reloj-spec.js*
+8. Comienza a trabajar con los ejercicios que se indican en *reloj-spec.js*
 
 Los ficheros de configuración, deberían haber quedado más o menos así:
 
