@@ -26,7 +26,7 @@ A continuación usando la línea de órdenes, haz lo siguiente:
 
     ```npx jasmine init```
 
-5. Abre Visual Code Studio y abre dentro de él este directorio de trabajo con el proyecto.
+5. Abre Visual Code Studio (o el IDE que estés utilizando) y abre dentro de él este directorio de trabajo con el proyecto.
 
 6. Mueve el fichero *reloj-spec.js.template* en el directorio *spec* y renómbralo para que se llame, finalmente: *reloj-spec.js*
 7. Comienza a trabajar con los ejercicios que se indican en *reloj-spec.js*
